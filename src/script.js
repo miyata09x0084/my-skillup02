@@ -43,7 +43,7 @@ gui.add(plane.rotation, 'x').min(0).max(600)
 
 // Lights
 
-const pointLight = new THREE.PointLight('#00e1ff', 3)
+const pointLight = new THREE.PointLight('#00b3ff', 3)
 pointLight.position.x = .2
 pointLight.position.y = 10
 pointLight.position.z = 4.4
@@ -63,14 +63,14 @@ gui.addColor(col, 'color').onChange(() => {
  * Sizes
  */
 const sizes = {
-    width: window.innerWidth,
+    width: window.innerWidth * .7,
     height: window.innerHeight
 }
 
 window.addEventListener('resize', () =>
 {
     // Update sizes
-    sizes.width = window.innerWidth
+    sizes.width = window.innerWidth * .7
     sizes.height = window.innerHeight
 
     // Update camera
@@ -89,7 +89,7 @@ window.addEventListener('resize', () =>
 const camera = new THREE.PerspectiveCamera(50, sizes.width / sizes.height, 0.1, 100)
 camera.position.x = 0
 camera.position.y = 0
-camera.position.z = 4
+camera.position.z = 3.5
 scene.add(camera)
 
 // Controls
@@ -131,7 +131,7 @@ const tick = () =>
     // Update objects
     // sphere.rotation.y = .5 * elapsedTime
 
-    plane.rotation.z = .5 * elapsedTime
+    plane.rotation.z = .14 * elapsedTime
     plane.material.displacementScale = .3 + mouseY * 0.0008
 
     // Update Orbital Controls
